@@ -1,5 +1,5 @@
 import React from 'react';
-import { GButton } from '@starwars-app/shared';
+import { GBreadCrumb } from '@starwars-app/shared';
 import { CharactersList } from '@starwars-app/characters';
 
 import { RoutesNames, RoutesPath } from '../routes/routes';
@@ -10,15 +10,19 @@ const CharactersView = () => {
 
   return (
     <div className=" bg-gray-800 p-6">
-      <div className="flex justify-between">
-        <GButton
-          label={RoutesNames.HOME}
-          onClick={() => navigate(RoutesPath.HOME)}
-        />
-        <div></div>
-        <h2 className="text-center text-2xl font-semibold text-white mb-6">
+      <div className="flex justify-start items-center space-x-3 mb-6">
+        <h2 className="text-2xl font-semibold text-white">
           Liste des personnages
         </h2>
+        <GBreadCrumb
+          items={[
+            {
+              label: RoutesNames.HOME,
+              onClick: () => navigate(RoutesPath.HOME),
+            },
+            { label: RoutesNames.CHARACTERS },
+          ]}
+        />
       </div>
       <div className="mt-6">
         <CharactersList />

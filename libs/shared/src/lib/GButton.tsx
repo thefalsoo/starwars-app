@@ -19,6 +19,7 @@ export const GButton: React.FC<GButtonProps> = ({
       onClick={onClick}
       disabled={disabled}
       className={`
+        flex
       ${
         disabled
           ? 'bg-gray-800 cursor-not-allowed opacity-50'
@@ -31,7 +32,7 @@ export const GButton: React.FC<GButtonProps> = ({
       ${disabled ? '' : 'hover:border-blue-400'}
     `}
     >
-      {iconName && <GIcon iconName={iconName} />}
+      {iconName && <GIcon iconName={iconName} color="white" />}
       {label}
     </button>
   );

@@ -5,15 +5,7 @@ import { useCharacter } from '../hooks/useCharacters';
 export const CharacterDetail: React.FC = () => {
   const { id = '0' } = useParams<{ id: string }>();
 
-  const { data, isLoading, error } = useCharacter(id);
-
-  if (isLoading) return <div className="text-center p-4">Chargement...</div>;
-  if (error)
-    return (
-      <div className="text-center p-4 text-red-500">
-        Erreur : {error.message}
-      </div>
-    );
+  const { data } = useCharacter(id);
 
   return (
     <div className=" bg-gray-800 text-white min-h-screen">

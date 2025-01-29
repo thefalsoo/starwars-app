@@ -1,12 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { GButton } from '@starwars-app/shared';
+import { PlanetsList } from '@starwars-app/planets';
+
 import { RoutesNames, RoutesPath } from '../routes/routes';
+import { useNavigate } from 'react-router-dom';
 
 const PlanetsView = () => {
+  const navigate = useNavigate();
   return (
     <div>
       PlanetsView
-      <Link to={RoutesPath.HOME}>{RoutesNames.HOME}</Link>
+      <GButton
+        label={RoutesNames.HOME}
+        onClick={() => navigate(RoutesPath.HOME)}
+      />
+      <PlanetsList />
     </div>
   );
 };

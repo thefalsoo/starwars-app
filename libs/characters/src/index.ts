@@ -1,1 +1,1 @@
-export * from './lib/characters';
+export { CharactersList } from './lib/components/CharactersList';

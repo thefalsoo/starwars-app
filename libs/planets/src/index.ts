@@ -1,1 +1,1 @@
-export * from './lib/planets';
+export { PlanetsList } from './lib/components/PlanetsList';

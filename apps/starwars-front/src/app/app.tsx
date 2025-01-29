@@ -1,11 +1,7 @@
-import NxWelcome from './nx-welcome';
+import AppRoutes from '../routes/AppRoutes';
 
 export function App() {
-  return (
-    <div>
-      <NxWelcome title="starwars-front" />
-    </div>
-  );
+  return <AppRoutes />;
 }
 
 export default App;

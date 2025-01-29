@@ -9,13 +9,20 @@ const CharactersView = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      CharactersView
-      <GButton
-        label={RoutesNames.HOME}
-        onClick={() => navigate(RoutesPath.HOME)}
-      />
-      <CharactersList />
+    <div className=" bg-gray-800 p-6">
+      <div className="flex justify-between">
+        <GButton
+          label={RoutesNames.HOME}
+          onClick={() => navigate(RoutesPath.HOME)}
+        />
+        <div></div>
+        <h2 className="text-center text-2xl font-semibold text-white mb-6">
+          Liste des personnages
+        </h2>
+      </div>
+      <div className="mt-6">
+        <CharactersList />
+      </div>
     </div>
   );
 };

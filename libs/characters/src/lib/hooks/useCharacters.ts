@@ -1,5 +1,5 @@
-import { useInfiniteQuery } from '@tanstack/react-query';
-import { fetchCharacters } from '../services/charactersService';
+import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
+import { fetchCharacter, fetchCharacters } from '../services/charactersService';
 
 export const useCharacetrs = () => {
   return useInfiniteQuery({
@@ -15,5 +15,12 @@ export const useCharacetrs = () => {
       return undefined;
     },
     initialPageParam: 1,
+  });
+};
+
+export const useCharacter = (characterId: string) => {
+  return useQuery({
+    queryKey: ['character'],
+    queryFn: () => fetchCharacter(characterId),
   });
 };

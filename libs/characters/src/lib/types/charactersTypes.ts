@@ -7,6 +7,14 @@ export interface Character {
   eye_color: string;
   birth_year: string;
   gender: string;
+  films: string[];
+  homeworld: string;
+  species: string[];
+  starships: string[];
+  vehicles: string[];
+  created: string;
+  edited: string;
+  url: string;
 }
 
 export interface CharactersResponse {
